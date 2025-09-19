@@ -13,4 +13,4 @@ INSERT INTO trader ( Name, Age)
 VALUES ( 'John Doe', 3);
 DBCC CHECKIDENT ('trader', RESEED, 100);---set the current identity value to 100
 INSERT INTO trader ( Name, Age)
-VALUES ( ' Doe', 30);
+VALUES ( ' Doe', 30);---ID will be 101
