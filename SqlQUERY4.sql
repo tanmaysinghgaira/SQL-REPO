@@ -64,3 +64,10 @@ INSERT INTO Marks (Roll_no, sub_code, marks) VALUES
 (22, 'BCA412', 44), (22, 'BCA413', 88), (22, 'BCA414', 66), (23, 'BCA411', 67), (23, 'BCA412', 78),  
 (23, 'BCA413', 91), (23, 'BCA414', 86), (24, 'BCA411', 81), (24, 'BCA412', 43), (24, 'BCA413', 42),  
 (24, 'BCA414', 22), (25, 'BCA411', 64), (25, 'BCA412', 96), (25, 'BCA413', 99), (25, 'BCA414', 89);
+
+select St.Name,
+       AVG(M.marks) AS AvgMarks
+from Students St
+join Marks M on St.Roll_no = M.Roll_no
+group by St.Roll_no, St.Name
+order by St.Roll_no;
