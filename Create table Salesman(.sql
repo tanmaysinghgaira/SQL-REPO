@@ -41,4 +41,12 @@ where city ='chennai';
 -- update the city of salesman from delhi to pune whose id is 5004
 update Salesman
 set city ='pune '
-where city ='delhi ' and salesman_id =5004;     
+where city ='delhi ' and salesman_id =5004;    
+
+--total commission given to all salesman
+SELECT sum (commission ) as taotal_commission  from Salesman;
+ --testing
+
+-- name of all salesman  whose name starts with 'A'
+select name from Salesman
+where name like  'A%';
