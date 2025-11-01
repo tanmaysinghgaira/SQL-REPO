@@ -13,9 +13,32 @@ Insert into Salesman (Salesman_id,name ,city,commission)VALUES(5005,'Amit','Kolk
 
 --details those who  come from delhi and mumbai
 SELECT * from Salesman
-where city  in ('Delhi','Mumbai');
+where city  in ('Delhi','Mumbai','pune');
 
 --details those who live in cities other than delhi and mumbai
 
 Select * from Salesman 
-where city not in ('Delhi ','Mumbai');
+where city not in ('Delhi ','Mumbai',);
+
+--names of different cities present in table
+select distinct city from Salesman;
+
+--salesman who recive commission more than 0.12
+select  * from Salesman 
+where commission >0.12;
+
+--update the city of salesman from mumbai to delhi
+
+UPDATE Salesman
+set city ='delhi'
+where city = 'mumbai';
+--updatin details again
+
+Update Salesman
+set city = 'mumbai '
+where city ='chennai';
+
+-- update the city of salesman from delhi to pune whose id is 5004
+update Salesman
+set city ='pune '
+where city ='delhi ' and salesman_id =5004;     
