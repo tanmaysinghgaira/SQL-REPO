@@ -50,3 +50,7 @@ SELECT sum (commission ) as taotal_commission  from Salesman;
 -- name of all salesman  whose name starts with 'A'
 select name from Salesman
 where name like  'A%';
+
+--name of the salesman who is receiving the highest commission
+select *from Salesman
+where commission  = (select max (commission) from Salesman);
