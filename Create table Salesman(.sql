@@ -12,5 +12,10 @@ Insert into Salesman (Salesman_id,name ,city,commission)VALUES(5004,'Ravi','Delh
 Insert into Salesman (Salesman_id,name ,city,commission)VALUES(5005,'Amit','Kolkata',0.11);
 
 --details those who  come from delhi and mumbai
-SELECT * from Selesman
+SELECT * from Salesman
 where city  in ('Delhi','Mumbai');
+
+--details those who live in cities other than delhi and mumbai
+
+Select * from Salesman 
+where city not in ('Delhi ','Mumbai');
