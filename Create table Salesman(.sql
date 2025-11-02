@@ -57,5 +57,5 @@ where commission  = (select max (commission) from Salesman);
 
 select  salesman_id from Salesman;
 -- for delete the salesman whose id is  5005
-selcet * from Salesman
-where salesman id =5005;
+Select * from Salesman
+where Salesman_id =5005;
