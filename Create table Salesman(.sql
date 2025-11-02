@@ -56,3 +56,4 @@ select *from Salesman
 where commission  = (select max (commission) from Salesman);
 
 select  salesman_id from Salesman;
+-- for delete the salesman whose id is  5005
