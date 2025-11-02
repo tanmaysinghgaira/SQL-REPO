@@ -54,3 +54,5 @@ where name like  'A%';
 --name of the salesman who is receiving the highest commission
 select *from Salesman
 where commission  = (select max (commission) from Salesman);
+
+select  salesman_id from Salesman;
