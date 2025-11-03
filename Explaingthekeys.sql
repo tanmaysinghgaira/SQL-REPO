@@ -41,3 +41,23 @@ INSERT INTO Employee (employee_id, empnmae,  Depid) VALUES
 (104, 'Sneha Gupta',  4 ),
 (105, 'Vikram Patel',  5 );
 select * from Employee;
+CREATE TABLE Exam (
+    StudentID INT,
+    SubjectID INT,
+    Marks INT,
+    PRIMARY KEY (StudentID, SubjectID)   -- Composite Key (2 columns together form a unique record)
+);
+
+-- Insert records into Exam
+INSERT INTO Exam (StudentID, SubjectID, Marks) VALUES
+(1, 101, 88),
+(1, 102, 92),
+(2, 101, 75);
+
+----------------------------------------------------------
+
+-- Example of data retrieval
+-- 1. Show all employees with their department names
+SELECT e.EmpID, e.EmpName, d.DeptName, e.Salary
+FROM Employee e
+JOIN Department d ON e.DeptID = d.DeptID;
