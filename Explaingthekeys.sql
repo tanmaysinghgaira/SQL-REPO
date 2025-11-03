@@ -24,8 +24,19 @@ CREATE TABLE Employee
     employee_id int primary key ,
     --prinmay key consteaint
     empnmae varchar(50) not null ,
+    email varchar (50) unique,
+    
+    Depid int, -- foreign key  reference department talble
 
-    Depid int,
-    ---  
+    foreign  key (Depid ) references Department (Depid)
 
 );
+
+
+-- inset data into employee table 
+INSERT INTO Employee (employee_id, empnmae, email, Depid) VALUES
+(101, 'Amit Sharma',  1 ),
+(102, 'Priya Verma',  2 ),
+(103, 'Rahul Singh',  3 ),
+(104, 'Sneha Gupta',  4 ),
+(105, 'Vikram Patel',  5 );
