@@ -34,15 +34,12 @@ CREATE TABLE Exam (
     Marks INT,
     PRIMARY KEY (StudentID, SubjectID)   -- Composite Key (2 columns together form a unique record)
 );
-
-select * from Employee;
 -- Insert records into Exam
 INSERT INTO Exam (StudentID, SubjectID, Marks) VALUES
 (1, 101, 88),
 (1, 102, 92),
 (2, 101, 75);
 
-----------------------------------------------------------
 
 -- Example of data retrieval
 -- 1. Show all employees with their department names
