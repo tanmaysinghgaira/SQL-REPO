@@ -54,3 +54,7 @@ select * from Department;
 -- use of in
  select * from Employee  
  where employee_id in (101, 103, 105);
+
+ --use of not in 
+    select * from Employee  
+    where employee_id not in (101, 103, 105);
