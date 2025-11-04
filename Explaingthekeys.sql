@@ -48,3 +48,9 @@ INSERT INTO Exam (StudentID, SubjectID, Marks) VALUES
 SELECT e.employee_id AS EmpID, e.empname AS EmpName, d.DeptName, e.email
 FROM Employee e
 JOIN Department d ON e.Depid = d.Depid;
+select * from Department;
+
+
+-- use of in
+ select * from Employee  
+ where employee_id in (101, 103, 105);
