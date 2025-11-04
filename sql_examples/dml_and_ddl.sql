@@ -1,16 +1,12 @@
 -- dml_and_ddl.sql
 -- 5 DDL/DML examples: CREATE TABLE, INSERT, UPDATE, DELETE, ALTER
--- 1) CREATE TABLE with primary key and NOT NULL
--- Converted for SQL Server: use IF OBJECT_ID(...) check instead of 'IF NOT EXISTS' clause
-IF OBJECT_ID('dbo.Products','U') IS NULL
-BEGIN
-    CREATE TABLE Products (
-        ProductID INT PRIMARY KEY,
-        ProductName NVARCHAR(200) NOT NULL,
-        Price DECIMAL(10,2) NOT NULL,
-        Stock INT CONSTRAINT DF_Products_Stock DEFAULT 0
-    );
-END
+-- 1) CREATE TABLE with primary key and NOT NULL (standard SQL)
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(200) NOT NULL,
+    Price DECIMAL(10,2) NOT NULL,
+    Stock INT DEFAULT 0
+);
 
 -- 2) INSERT rows (single and multiple)
 INSERT INTO Products (ProductID, ProductName, Price, Stock) VALUES (1, 'Notebook', 5, 100);
@@ -33,11 +29,7 @@ DELETE FROM Products WHERE Stock = 0;
 
 
 -- 5) ALTER TABLE (add column) and then backfill data
--- SQL Server syntax: ADD <column> <type>
-IF COL_LENGTH('dbo.Products', 'Category') IS NULL
-BEGIN
-    ALTER TABLE Products ADD Category NVARCHAR(100);
-END
+ALTER TABLE Products ADD Category VARCHAR(100);
 
 -- Fill category for existing rows
 UPDATE Products
