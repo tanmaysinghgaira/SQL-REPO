@@ -58,3 +58,7 @@ select * from Department;
  --use of not in 
     select * from Employee  
     where employee_id not in (101, 103, 105);
+
+    -- use of like
+    select * from Employee  
+    where empname like 'A%';  -- names starting with 'A'
