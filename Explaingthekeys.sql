@@ -35,6 +35,7 @@ CREATE TABLE Exam (
     PRIMARY KEY (StudentID, SubjectID)   -- Composite Key (2 columns together form a unique record)
 );
 
+select * from Employee;
 -- Insert records into Exam
 INSERT INTO Exam (StudentID, SubjectID, Marks) VALUES
 (1, 101, 88),
