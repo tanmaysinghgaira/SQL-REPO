@@ -1,12 +1,16 @@
 -- dml_and_ddl.sql
 -- 5 DDL/DML examples: CREATE TABLE, INSERT, UPDATE, DELETE, ALTER
 -- 1) CREATE TABLE with primary key and NOT NULL
-CREATE TABLE IF NOT EXISTS Products (
-    ProductID INTEGER PRIMARY KEY,
-    ProductName TEXT NOT NULL,
-    Price INTEGER NOT NULL,
-    Stock INTEGER DEFAULT 0
-);
+-- Converted for SQL Server: use IF OBJECT_ID(...) check instead of 'IF NOT EXISTS' clause
+IF OBJECT_ID('dbo.Products','U') IS NULL
+BEGIN
+    CREATE TABLE Products (
+        ProductID INT PRIMARY KEY,
+        ProductName NVARCHAR(200) NOT NULL,
+        Price DECIMAL(10,2) NOT NULL,
+        Stock INT CONSTRAINT DF_Products_Stock DEFAULT 0
+    );
+END
 
 -- 2) INSERT rows (single and multiple)
 INSERT INTO Products (ProductID, ProductName, Price, Stock) VALUES (1, 'Notebook', 5, 100);
@@ -27,9 +31,13 @@ SELECT ProductID, ProductName, Price, Stock FROM Products;
 -- Problem: remove products with zero stock
 DELETE FROM Products WHERE Stock = 0;
 
+
 -- 5) ALTER TABLE (add column) and then backfill data
--- Note: SQLite supports limited ALTER TABLE (ADD COLUMN)
-ALTER TABLE Products ADD COLUMN Category TEXT;
+-- SQL Server syntax: ADD <column> <type>
+IF COL_LENGTH('dbo.Products', 'Category') IS NULL
+BEGIN
+    ALTER TABLE Products ADD Category NVARCHAR(100);
+END
 
 -- Fill category for existing rows
 UPDATE Products
