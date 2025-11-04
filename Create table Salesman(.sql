@@ -18,7 +18,7 @@ where city  in ('Delhi','Mumbai','pune');
 --details those who live in cities other than delhi and mumbai
 
 Select * from Salesman 
-where city not in ('Delhi ','Mumbai',);
+where city NOT IN ('Delhi', 'Mumbai');
 
 --names of different cities present in table
 select distinct city from Salesman;
