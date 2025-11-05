@@ -12,13 +12,13 @@ Insert into Salesman (Salesman_id,name ,city,commission)VALUES(5004,'Ravi','Delh
 Insert into Salesman (Salesman_id,name ,city,commission)VALUES(5005,'Amit','Kolkata',0.11);
 
 --details those who  come from delhi and mumbai
-SELECT * from Salesman
-where city  in ('Delhi','Mumbai','pune');
+SELECT * FROM Salesman
+WHERE city IN ('Delhi','Mumbai','Pune');
 
---details those who live in cities other than delhi and mumbai
+-- details those who live in cities other than Delhi and Mumbai
 
-Select * from Salesman 
-where city NOT IN ('Delhi', 'Mumbai');
+SELECT * FROM Salesman
+WHERE city <> 'Delhi' AND city <> 'Mumbai';
 
 --names of different cities present in table
 select distinct city from Salesman;
