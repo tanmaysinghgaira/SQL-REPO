@@ -14,3 +14,4 @@ CREATE TABLE  Orders(
     Product VARCHAR(50),
     CONSTRAINT FK_Orders_Child FOREIGN KEY (Customer) REFERENCES Child_tabel(Customer)
 );
+
