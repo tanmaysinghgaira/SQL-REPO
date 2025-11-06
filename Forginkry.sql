@@ -4,4 +4,13 @@ CREATE  TABLE Child_tabel(
     City VARCHAR(50)
 );
 
-CREATE Tabel  OR
+
+
+
+CREATE TABLE  Orders(
+    Order_Id INT PRIMARY KEY,
+    Order_Date DATE,
+    Customer INT,
+    Product VARCHAR(50),
+    CONSTRAINT FK_Orders_Child FOREIGN KEY (Customer) REFERENCES Child_tabel(Customer)
+);
