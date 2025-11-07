@@ -5,9 +5,9 @@ CREATE  TABLE Child_tabel(
 );
 
 
+DROP TABLE IF EXISTS Child_tabel;
 
-
-CREATE TABLE  Orders(
+CREATE TABLE  Ord(
     Order_Id INT PRIMARY KEY,
     Order_Date DATE,
     Customer INT,
