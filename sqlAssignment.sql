@@ -17,3 +17,9 @@ Create table Course(
  SELECT * FROM Course;
 --add eamil column to student tabel
 Alter table Student add Email varchar(50);
+
+-- modify age column data type
+Alter table Student MODIFY Age SMALLINT;
+
+--Rename student tabel to studetnINfo
+Rename table Student TO StudentInfo   ;
