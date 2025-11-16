@@ -1,6 +1,7 @@
 -- DDL Commands (Create, Alter, Drop)
 --1
-Create TABLE Student(
+Create TABLE Student
+(
     StudentId int primary key,
     StudentName varchar(50),
     Age int,
@@ -8,18 +9,41 @@ Create TABLE Student(
 );
 
 --2 Create tabel Course
-DROP TABLE IF EXISTS Course; -- Drop table if exists as samr name table may exist
-Create table Course(
+DROP TABLE IF EXISTS Course;
+-- Drop table if exists as samr name table may exist
+Create table Course
+(
     CourseID int primary key,
     Coursename varchar(50),
     Department varchar(50)
 );
- SELECT * FROM Course;
+SELECT *
+FROM Course;
 --add eamil column to student tabel
 Alter table Student add Email varchar(50);
 
 -- modify age column data type
-Alter table Student MODIFY Age SMALLINT;
+--Alter table Student  Age SMALLINT;
 
 --Rename student tabel to studetnINfo
-Rename table Student TO StudentInfo   ;
+exec sp_rename 'Student', 'StudentInfo';
+
+--Remove departmetn column from studentInfo tabel
+
+AlTER TABle StudentInfo DROP COLUMN department;
+
+--Create Department tabel
+DROP TABLE IF EXISTS Depart;
+CREATE TABLE Depart
+(
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50),
+    Location VARCHAR(50)
+);
+
+--Dml Commands (Insert, Update, Delete, Select)
+--1 Insert data into StudentInfo tabel
+INSERT INTO StudentInfo (StudentId, StudentName, Age, Email) VALUES
+(1, 'Tanmay', 22, 'tanmay@example.com'),
+(2, 'Rohan', 23, 'rohan@example.com'),
+(3, 'Sita', 21, 'sita@example.com');    
