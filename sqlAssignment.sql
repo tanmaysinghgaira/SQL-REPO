@@ -62,3 +62,5 @@ DELETE FROM  StudentInfo WHERE StudentId =2;
 --delete all records from studentinfo table
 
 --DELETE FROM StudentInfo;
+
+Select StudentName, Age from StudentInfo;
