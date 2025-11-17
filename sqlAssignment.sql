@@ -47,3 +47,10 @@ INSERT INTO StudentInfo (StudentId, StudentName, Age, Email) VALUES
 (1, 'Tanmay', 22, 'tanmay@example.com'),
 (2, 'Rohan', 23, 'rohan@example.com'),
 (3, 'Sita', 21, 'sita@example.com');    
+--
+
+--Update age 
+UPDATE StudentInfo SET Age = 24 Where StudentId =2;
+
+-- Increse age by 1 for all students
+UPDATE StudentInfo SET Age = Age +1 ;
