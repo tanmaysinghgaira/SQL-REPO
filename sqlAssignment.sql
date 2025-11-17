@@ -54,3 +54,11 @@ UPDATE StudentInfo SET Age = 24 Where StudentId =2;
 
 -- Increse age by 1 for all students
 UPDATE StudentInfo SET Age = Age +1 ;
+
+--Delete student  Rohan 
+
+DELETE FROM  StudentInfo WHERE StudentId =2;
+
+--delete all records from studentinfo table
+
+--DELETE FROM StudentInfo;
