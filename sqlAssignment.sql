@@ -64,3 +64,5 @@ DELETE FROM  StudentInfo WHERE StudentId =2;
 --DELETE FROM StudentInfo;
 
 Select StudentName, Age from StudentInfo;
+hello
+Select * from StudentInfo;
