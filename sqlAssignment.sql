@@ -66,3 +66,7 @@ DELETE FROM  StudentInfo WHERE StudentId =2;
 Select StudentName, Age from StudentInfo;
 hello
 Select * from StudentInfo;
+   -- use
+
+   --beteween operator
+   SELECT * FROM StudentInfo WHERE Age BETWEEN 22 AND 24;
