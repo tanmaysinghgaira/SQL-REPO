@@ -70,3 +70,4 @@ Select * from StudentInfo;
 
    --beteween operator
    SELECT * FROM StudentInfo WHERE Age BETWEEN 22 AND 24;
+   new
