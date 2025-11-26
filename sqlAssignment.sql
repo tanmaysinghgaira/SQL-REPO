@@ -91,3 +91,24 @@ CREATE TABLE OrderItems (
     Item VARCHAR(100),
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 );
+
+-- ❌ NOT 2NF (partial dependency)
+CREATE TABLE StudentCourses (
+    StudentID INT,
+    CourseID INT,
+    StudentName VARCHAR(100),  -- Depends only on StudentID, not the composite key
+    PRIMARY KEY (StudentID, CourseID)
+);
+
+-- ✅ 2NF
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    StudentName VARCHAR(100)
+);
+
+CREATE TABLE StudentCourses (
+    StudentID INT,
+    CourseID INT,
+    PRIMARY KEY (StudentID, CourseID),
+    FOREIGN KEY (StudentID) REFERENCES Students(StudentID)
+);
