@@ -112,3 +112,24 @@ CREATE TABLE StudentCourses (
     PRIMARY KEY (StudentID, CourseID),
     FOREIGN KEY (StudentID) REFERENCES Students(StudentID)
 );
+
+-- ❌ NOT 3NF (transitive dependency)
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    EmployeeName VARCHAR(100),
+    DepartmentID INT,
+    DepartmentName VARCHAR(100)  -- Depends on DepartmentID, not EmployeeID
+);
+
+-- ✅ 3NF
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    EmployeeName VARCHAR(100),
+    DepartmentID INT,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+);
+
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(100)
+);
