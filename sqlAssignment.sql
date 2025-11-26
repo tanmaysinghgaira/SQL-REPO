@@ -71,3 +71,23 @@ Select * from StudentInfo;
    --beteween operator
    SELECT * FROM StudentInfo WHERE Age BETWEEN 22 AND 24;
    new
+
+-- ❌ NOT 1NF (repeating groups)
+CREATE TABLE Orders (
+    OrderID INT,
+    CustomerName VARCHAR(100),
+    Items VARCHAR(500)  -- Contains multiple items separated by commas
+);
+
+-- ✅ 1NF (atomic values)
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerName VARCHAR(100)
+);
+
+CREATE TABLE OrderItems (
+    OrderItemID INT PRIMARY KEY,
+    OrderID INT,
+    Item VARCHAR(100),
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
